@@ -4,10 +4,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public int bestscore;
     public int score;
     public string userName;
-    public Serializations saveData;
+
+    private Serializations saveData;
 
     private void Start()
     {
@@ -15,8 +17,9 @@ public class GameManager : MonoBehaviour
         saveData = GetComponent<Serializations>();
         saveData.Load();
     }
+    
 
-    void SetupGameManager()
+    private void SetupGameManager()
     {
         if (instance != null)
             Destroy(gameObject);

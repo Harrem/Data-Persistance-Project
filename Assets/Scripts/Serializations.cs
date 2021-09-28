@@ -21,8 +21,8 @@ public class Serializations : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             var data = JsonUtility.FromJson<Data>(json);
-            GameManager.instance.bestscore = data.bestScore;
             GameManager.instance.userName = data.username;
+            GameManager.instance.bestscore = data.bestScore;
         }
     }
 
